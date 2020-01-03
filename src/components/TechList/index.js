@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { addTech } from '~/store/modules/techs/actions';
+
 // import { Container } from './styles';
 
 export default function TechList() {
@@ -19,7 +21,7 @@ export default function TechList() {
   }, [techs]);
 
   function handleAddTech() {
-    setTechs([...techs, newTech]);
+    dispatch(addTech(newTech));
     setNewTech('');
   }
 
